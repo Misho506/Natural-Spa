@@ -1,0 +1,41 @@
+.spa-footer {
+  background-color: #62c3b4;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: calc(100vw - 40px);
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .social-media {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 10px;
+      color: white;
+
+      a {
+        img {
+          width: 30px;
+          height: 30px;
+          transition: transform 0.3s;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+
+    .spa-address {
+      font-size: 1.1rem;
+    }
+  }
+}

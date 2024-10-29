@@ -1,0 +1,40 @@
+<div class="home-container">
+  <app-header />
+  <div class="content">
+    <section class="spa-container">
+      <img src="assets/massage01.png" alt="Massage Example">
+      <aside class="background-image">
+        <div class="text-overlay">
+          <h3>A True Spa Experience</h3>
+          <p>
+            Welcome to a serene sanctuary where tranquility and elegance meet. This intimate spa, a labor of love
+            created
+            by
+            my wife, is designed to offer you the highest level of personal care. From soothing massages to calming
+            therapies, every detail is crafted with a delicate touch, ensuring a sophisticated, rejuvenating experience
+            that
+            nurtures both body and soul.
+          </p>
+        </div>
+      </aside>
+    </section>
+    <section class="section-2">
+      <div class="service" *ngFor="let service of services; let i = index">
+        <div class="service-title-price" (click)="showDetails(i)">
+          <span>{{service.name}}</span>
+          <div style="display: flex;">
+            <span>{{service.price}}</span>
+            <button class="show-button">
+              <mat-icon *ngIf="!service.showDetails" ria-label="Keyboard arrow down" fontIcon="keyboard_arrow_down" />
+              <mat-icon *ngIf="service.showDetails" aria-label="Keyboard arrow up" fontIcon="keyboard_arrow_up" />
+            </button>
+          </div>
+        </div>
+        <div *ngIf="service.showDetails" [@openClose]="service.showDetails ? true : false" class="open-close-container">
+          <app-service [service]="service" />
+        </div>
+      </div>
+    </section>
+  </div>
+  <app-footer />
+</div>

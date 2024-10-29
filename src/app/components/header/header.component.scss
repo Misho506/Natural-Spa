@@ -1,0 +1,46 @@
+@use '@angular/material' as mat;
+@import "../../../styles/styles.scss";
+
+.header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 2px solid $accent-color;
+
+  .logo-img {
+    max-height: 90px;
+  }
+
+  .navigation {
+    display: flex;
+    gap: 20px;
+
+    a {
+      text-decoration: none;
+      color: $primary-color2;
+      font-size: 1.1rem;
+      font-weight: 500;
+
+      &:hover {
+        color: $accent-color;
+      }
+    }
+  }
+
+  .book-now {
+    background-color: $primary-color2;
+    color: $white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $accent-color;
+    }
+  }
+}
